@@ -1,592 +1,988 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabka Clinic - Healthcare for All</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
-  background-color: #F8FAFC;
-}
-
-.page-container {
-  min-height: 80vh;
-  animation: fadeIn 0.4s ease-out;
-}
-
-.page-hidden {
-  display: none !important;
-}
-
-body:not(.lang-hindi) .lang-hi {
-  display: none;
-}
-
-body.lang-hindi .lang-en {
-  display: none;
-}
-
-body.lang-hindi .lang-hi {
-  display: inline;
-}
-
-.nav-link {
-  cursor: pointer;
-  transition: all 0.3s;
-  color: #334155;
-  font-weight: 700;
-}
-
-.nav-link:hover {
-  color: #FF6B6B;
-  border-bottom: 2px solid #FF6B6B;
-}
-
-.btn-coral {
-  background-color: #FF6B6B;
-  color: white;
-  transition: all 0.3s;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-coral:hover {
-  background-color: #E11D48;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(225, 29, 72, 0.3);
-}
-
-.case-study-card {
-  background: white;
-  border-radius: 1.5rem;
-  padding: 2.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
-  border-left: 6px solid #FF6B6B;
-}
-
-.case-study-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.news-card {
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: all 0.3s;
-  border: 2px solid transparent;
-}
-
-.news-card:hover {
-  border-color: #FF6B6B;
-  transform: translateY(-4px);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-slide-in {
-  animation: slideInUp 0.6s ease-out;
-}
-
-.impact-stat {
-  animation: slideInUp 0.8s ease-out;
-}
-
-.mobile-menu {
-  display: none;
-}
-
-@media (max-width: 1023px) {
-  .desktop-nav {
-    display: none;
-  }
-  .mobile-menu {
-    display: block;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabka Clinic - Healthcare for All</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif; 
+            background-color: #F8FAFC; 
+        }
+        .page-container { 
+            min-height: 80vh; 
+            animation: fadeIn 0.4s ease-out; 
+        }
+        .page-hidden { 
+            display: none !important; 
+        }
+        body:not(.lang-hindi) .lang-hi { 
+            display: none; 
+        }
+        body.lang-hindi .lang-en { 
+            display: none; 
+        }
+        body.lang-hindi .lang-hi { 
+            display: inline; 
+        }
+        .nav-link { 
+            cursor: pointer; 
+            transition: all 0.3s; 
+            color: #334155; 
+            font-weight: 700; 
+        }
+        .nav-link:hover { 
+            color: #FF6B6B; 
+            border-bottom: 2px solid #FF6B6B; 
+        }
+        .btn-coral { 
+            background-color: #FF6B6B; 
+            color: white; 
+            transition: all 0.3s; 
+            border: none; 
+            cursor: pointer; 
+        }
+        .btn-coral:hover { 
+            background-color: #E11D48; 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(225, 29, 72, 0.3); 
+        }
+        .case-study-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-left: 6px solid #FF6B6B;
+        }
+        .case-study-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .news-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .news-card:hover {
+            border-color: #FF6B6B;
+            transform: translateY(-4px);
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(5px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+        .impact-stat {
+            animation: slideInUp 0.8s ease-out;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        @media (max-width: 1023px) {
+            .desktop-nav {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body class="text-slate-800">
 
-<!-- Navigation -->
-<nav class="sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-    <div class="text-2xl font-extrabold text-[#0F172A] tracking-tighter cursor-pointer uppercase" onclick="showPage('home')">
-      SABKA<span class="text-[#FF6B6B]">CLINIC</span>
-    </div>
-    <div class="desktop-nav hidden lg:flex space-x-10 text-[10px] uppercase tracking-[3px]">
-      <a onclick="showPage('about')" class="nav-link">
-        <span class="lang-en">About</span>
-        <span class="lang-hi">हमारे बारे में</span>
-      </a>
-      <a onclick="showPage('community')" class="nav-link">
-        <span class="lang-en">Community</span>
-        <span class="lang-hi">समुदाय</span>
-      </a>
-      <a onclick="showPage('programs')" class="nav-link">
-        <span class="lang-en">Programs</span>
-        <span class="lang-hi">कार्यक्रम</span>
-      </a>
-      <a onclick="showPage('impact')" class="nav-link">
-        <span class="lang-en">Impact</span>
-        <span class="lang-hi">प्रभाव</span>
-      </a>
-      <a onclick="showPage('volunteer')" class="nav-link">
-        <span class="lang-en">Volunteer</span>
-        <span class="lang-hi">स्वयंसेवक</span>
-      </a>
-      <a onclick="showPage('donate')" class="nav-link text-[#E11D48] font-black">
-        <span class="lang-en">Donate</span>
-        <span class="lang-hi">दान करें</span>
-      </a>
-    </div>
-    <div class="flex items-center space-x-6">
-      <button onclick="toggleLang()" id="langBtn" class="text-[10px] font-black border-b-2 border-[#0F172A] text-[#0F172A]">HINDI</button>
-      <button onclick="showPage('donate')" class="btn-coral px-7 py-2.5 rounded font-bold text-[10px] tracking-widest uppercase">
-        <span class="lang-en">Donate</span>
-        <span class="lang-hi">दान करें</span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- HOME PAGE -->
-<div id="home" class="page-container">
-  <!-- Hero Section -->
-  <header class="py-24 px-6 text-center max-w-5xl mx-auto">
-    <h1 class="text-6xl md:text-8xl font-extrabold mb-8 text-[#0F172A] leading-[0.9] tracking-tighter uppercase">
-      <span class="lang-en">Health is a right,<br/><span class="text-[#FF6B6B] italic font-normal normal-case">not a luxury.</span></span>
-      <span class="lang-hi">स्वास्थ्य एक अधिकार है,<br/><span class="text-[#FF6B6B] italic font-normal normal-case">विलासिता नहीं।</span></span>
-    </h1>
-    <p class="text-xl md:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto font-medium">
-      <span class="lang-en">Dignified and ethical primary healthcare for India's urban settlements for just ₹20.</span>
-      <span class="lang-hi">भारत की शहरी बस्तियों के लिए केवल ₹20 में गरिमापूर्ण प्राथमिक स्वास्थ्य सेवा।</span>
-    </p>
-    <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
-      <button onclick="showPage('donate')" class="btn-coral px-10 py-4 rounded font-bold uppercase tracking-widest text-sm">
-        <span class="lang-en">Donate Now</span>
-        <span class="lang-hi">अभी दान करें</span>
-      </button>
-      <button onclick="showPage('about')" class="border-2 border-[#0F172A] text-[#0F172A] px-10 py-4 rounded font-bold uppercase text-sm hover:bg-[#0F172A] hover:text-white transition">
-        <span class="lang-en">Our Story</span>
-        <span class="lang-hi">हमारी कहानी</span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Quick Links Section -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-6">
-        <div onclick="showPage('about')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#FF6B6B] hover:text-white transition cursor-pointer group">
-          <div class="text-4xl mb-4">📖</div>
-          <h3 class="font-bold uppercase text-sm tracking-wider">
-            <span class="lang-en">Our Story</span>
-            <span class="lang-hi">हमारी कहानी</span>
-          </h3>
-        </div>
-        <div onclick="showPage('community')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#FF6B6B] hover:text-white transition cursor-pointer group">
-          <div class="text-4xl mb-4">👥</div>
-          <h3 class="font-bold uppercase text-sm tracking-wider">
-            <span class="lang-en">Community</span>
-            <span class="lang-hi">समुदाय</span>
-          </h3>
-        </div>
-        <div onclick="showPage('volunteer')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#FF6B6B] hover:text-white transition cursor-pointer group">
-          <div class="text-4xl mb-4">🤝</div>
-          <h3 class="font-bold uppercase text-sm tracking-wider">
-            <span class="lang-en">Volunteer</span>
-            <span class="lang-hi">स्वयंसेवक</span>
-          </h3>
-        </div>
-        <div onclick="showPage('donate')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#E11D48] hover:text-white transition cursor-pointer group">
-          <div class="text-4xl mb-4">❤️</div>
-          <h3 class="font-bold uppercase text-sm tracking-wider">
-            <span class="lang-en">Donate</span>
-            <span class="lang-hi">दान करें</span>
-          </h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sabka Clinic in the News -->
-  <section class="py-20 px-6">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-[#0F172A] text-center">
-        <span class="lang-en">Sabka Clinic in the News</span>
-        <span class="lang-hi">समाचार में सबका क्लिनिक</span>
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- News Article 1 -->
-        <a href="https://www.hindustantimes.com/cities/mumbai-news/mankhurd-slum-pocket-gets-a-promise-of-good-health-101699816766531.html" target="_blank" class="news-card">
-          <div class="p-8">
-            <div class="text-xs font-black text-[#FF6B6B] mb-3 uppercase tracking-widest">Hindustan Times</div>
-            <h3 class="text-2xl font-bold mb-4 text-[#0F172A]">
-              <span class="lang-en">Mankhurd Slum Pocket Gets a Promise of Good Health</span>
-              <span class="lang-hi">मानखुर्द झुग्गी क्षेत्र को अच्छे स्वास्थ्य का वादा मिला</span>
-            </h3>
-            <p class="text-slate-600 mb-4">
-              <span class="lang-en">How Sabka Clinic is transforming healthcare access in Mumbai's urban settlements.</span>
-              <span class="lang-hi">कैसे सबका क्लिनिक मुंबई की शहरी बस्तियों में स्वास्थ्य सेवा की पहुंच को बदल रहा है।</span>
-            </p>
-            <div class="text-[#E11D48] font-bold text-sm">
-              <span class="lang-en">Read More →</span>
-              <span class="lang-hi">और पढ़ें →</span>
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-[#0F172A] tracking-tighter cursor-pointer uppercase" onclick="showPage('home')">
+                SABKA<span class="text-[#FF6B6B]">CLINIC</span>
             </div>
-          </div>
-        </a>
-        <!-- News Article 2 -->
-        <a href="https://www.hindustantimes.com/cities/mumbai-news/mumps-outbreak-in-mumbai-s-poorer-areas-causes-worry-101699902457945.html" target="_blank" class="news-card">
-          <div class="p-8">
-            <div class="text-xs font-black text-[#FF6B6B] mb-3 uppercase tracking-widest">Hindustan Times</div>
-            <h3 class="text-2xl font-bold mb-4 text-[#0F172A]">
-              <span class="lang-en">Dr. Shilpa Responds to Mumps Outbreak in Mumbai</span>
-              <span class="lang-hi">डॉ. शिल्पा ने मुंबई में गलसुआ के प्रकोप पर प्रतिक्रिया दी</span>
-            </h3>
-            <p class="text-slate-600 mb-4">
-              <span class="lang-en">Our doctor's vital role in addressing public health emergencies in vulnerable communities.</span>
-              <span class="lang-hi">कमजोर समुदायों में सार्वजनिक स्वास्थ्य आपात स्थितियों को संबोधित करने में हमारे डॉक्टर की महत्वपूर्ण भूमिका।</span>
-            </p>
-            <div class="text-[#E11D48] font-bold text-sm">
-              <span class="lang-en">Read More →</span>
-              <span class="lang-hi">और पढ़ें →</span>
+            <div class="desktop-nav hidden lg:flex space-x-10 text-[10px] uppercase tracking-[3px]">
+                <a onclick="showPage('about')" class="nav-link">
+                    <span class="lang-en">About</span>
+                    <span class="lang-hi">हमारे बारे में</span>
+                </a>
+                <a onclick="showPage('community')" class="nav-link">
+                    <span class="lang-en">Community</span>
+                    <span class="lang-hi">समुदाय</span>
+                </a>
+                <a onclick="showPage('programs')" class="nav-link">
+                    <span class="lang-en">Programs</span>
+                    <span class="lang-hi">कार्यक्रम</span>
+                </a>
+                <a onclick="showPage('impact')" class="nav-link">
+                    <span class="lang-en">Impact</span>
+                    <span class="lang-hi">प्रभाव</span>
+                </a>
+                <a onclick="showPage('volunteer')" class="nav-link">
+                    <span class="lang-en">Volunteer</span>
+                    <span class="lang-hi">स्वयंसेवक</span>
+                </a>
+                <a onclick="showPage('donate')" class="nav-link text-[#E11D48] font-black">
+                    <span class="lang-en">Donate</span>
+                    <span class="lang-hi">दान करें</span>
+                </a>
             </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Impact Stats Preview -->
-  <section class="py-20 px-6 bg-[#0F172A] text-white">
-    <div class="max-w-7xl mx-auto text-center">
-      <div class="grid md:grid-cols-3 gap-16">
-        <div class="impact-stat">
-          <div class="text-7xl font-extrabold">₹20</div>
-          <p class="text-slate-400 mt-2">
-            <span class="lang-en">Consultation Fee</span>
-            <span class="lang-hi">परामर्श शुल्क</span>
-          </p>
+            <div class="flex items-center space-x-6">
+                <button onclick="toggleLang()" id="langBtn" class="text-[10px] font-black border-b-2 border-[#0F172A] text-[#0F172A]">HINDI</button>
+                <button onclick="showPage('donate')" class="btn-coral px-7 py-2.5 rounded font-bold text-[10px] tracking-widest uppercase">
+                    <span class="lang-en">Donate</span>
+                    <span class="lang-hi">दान करें</span>
+                </button>
+            </div>
         </div>
-        <div class="impact-stat">
-          <div class="text-7xl font-extrabold text-[#FF6B6B]">25k+</div>
-          <p class="text-slate-400 mt-2">
-            <span class="lang-en">Patients Served</span>
-            <span class="lang-hi">रोगी सेवित</span>
-          </p>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page-container">
+        <!-- Hero Section -->
+        <header class="py-24 px-6 text-center max-w-5xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 text-[#0F172A] leading-[0.9] tracking-tighter uppercase">
+                <span class="lang-en">Health is a right,<br/><span class="text-[#FF6B6B] italic font-normal normal-case">not a luxury.</span></span>
+                <span class="lang-hi text-5xl">स्वास्थ्य एक अधिकार है,<br/><span class="text-[#FF6B6B] font-normal">विलासिता नहीं।</span></span>
+            </h1>
+            <p class="text-lg text-slate-500 mb-12 max-w-xl mx-auto font-semibold">
+                <span class="lang-en">Dignified and ethical primary healthcare for India's urban settlements for just ₹20.</span>
+                <span class="lang-hi">भारत की शहरी बस्तियों के लिए केवल ₹20 में गरिमापूर्ण प्राथमिक स्वास्थ्य सेवा।</span>
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
+                <button onclick="showPage('donate')" class="btn-coral px-10 py-4 rounded font-bold uppercase tracking-widest text-sm">
+                    <span class="lang-en">Donate Now</span>
+                    <span class="lang-hi">अभी दान करें</span>
+                </button>
+                <button onclick="showPage('about')" class="border-2 border-[#0F172A] text-[#0F172A] px-10 py-4 rounded font-bold uppercase text-sm hover:bg-[#0F172A] hover:text-white transition">
+                    <span class="lang-en">Our Story</span>
+                    <span class="lang-hi">हमारी कहानी</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Quick Links Section -->
+        <section class="py-16 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div onclick="showPage('about')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#FF6B6B] hover:text-white transition cursor-pointer group">
+                        <div class="text-4xl mb-4">📖</div>
+                        <h3 class="font-bold uppercase text-sm tracking-wider">
+                            <span class="lang-en">Our Story</span>
+                            <span class="lang-hi">हमारी कहानी</span>
+                        </h3>
+                    </div>
+                    <div onclick="showPage('community')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#FF6B6B] hover:text-white transition cursor-pointer group">
+                        <div class="text-4xl mb-4">👥</div>
+                        <h3 class="font-bold uppercase text-sm tracking-wider">
+                            <span class="lang-en">Community</span>
+                            <span class="lang-hi">समुदाय</span>
+                        </h3>
+                    </div>
+                    <div onclick="showPage('volunteer')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#FF6B6B] hover:text-white transition cursor-pointer group">
+                        <div class="text-4xl mb-4">🤝</div>
+                        <h3 class="font-bold uppercase text-sm tracking-wider">
+                            <span class="lang-en">Volunteer</span>
+                            <span class="lang-hi">स्वयंसेवक</span>
+                        </h3>
+                    </div>
+                    <div onclick="showPage('donate')" class="text-center p-8 rounded-2xl bg-slate-50 hover:bg-[#E11D48] hover:text-white transition cursor-pointer group">
+                        <div class="text-4xl mb-4">❤️</div>
+                        <h3 class="font-bold uppercase text-sm tracking-wider">
+                            <span class="lang-en">Donate</span>
+                            <span class="lang-hi">दान करें</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sabka Clinic in the News -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-[#0F172A] text-center">
+                    <span class="lang-en">Sabka Clinic in the News</span>
+                    <span class="lang-hi">समाचार में सबका क्लिनिक</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- News Article 1 -->
+                    <a href="https://www.hindustantimes.com/cities/mumbai-news/mankhurd-slum-pocket-gets-a-promise-of-good-health-101699816766531.html" target="_blank" class="news-card">
+                        <div class="p-8">
+                            <div class="text-xs font-black text-[#FF6B6B] mb-3 uppercase tracking-widest">Hindustan Times</div>
+                            <h3 class="text-2xl font-bold mb-4 text-[#0F172A]">
+                                <span class="lang-en">Mankhurd Slum Pocket Gets a Promise of Good Health</span>
+                                <span class="lang-hi">मानखुर्द झुग्गी क्षेत्र को अच्छे स्वास्थ्य का वादा मिला</span>
+                            </h3>
+                            <p class="text-slate-600 mb-4">
+                                <span class="lang-en">How Sabka Clinic is transforming healthcare access in Mumbai's urban settlements.</span>
+                                <span class="lang-hi">कैसे सबका क्लिनिक मुंबई की शहरी बस्तियों में स्वास्थ्य सेवा की पहुंच को बदल रहा है।</span>
+                            </p>
+                            <div class="text-[#E11D48] font-bold text-sm">
+                                <span class="lang-en">Read More →</span>
+                                <span class="lang-hi">और पढ़ें →</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- News Article 2 -->
+                    <a href="https://www.hindustantimes.com/cities/mumbai-news/mumps-outbreak-in-mumbai-s-poorer-areas-causes-worry-101699902457945.html" target="_blank" class="news-card">
+                        <div class="p-8">
+                            <div class="text-xs font-black text-[#FF6B6B] mb-3 uppercase tracking-widest">Hindustan Times</div>
+                            <h3 class="text-2xl font-bold mb-4 text-[#0F172A]">
+                                <span class="lang-en">Dr. Shilpa Responds to Mumps Outbreak in Mumbai</span>
+                                <span class="lang-hi">डॉ. शिल्पा ने मुंबई में गलसुआ के प्रकोप पर प्रतिक्रिया दी</span>
+                            </h3>
+                            <p class="text-slate-600 mb-4">
+                                <span class="lang-en">Our doctor's vital role in addressing public health emergencies in vulnerable communities.</span>
+                                <span class="lang-hi">कमजोर समुदायों में सार्वजनिक स्वास्थ्य आपात स्थितियों को संबोधित करने में हमारे डॉक्टर की महत्वपूर्ण भूमिका।</span>
+                            </p>
+                            <div class="text-[#E11D48] font-bold text-sm">
+                                <span class="lang-en">Read More →</span>
+                                <span class="lang-hi">और पढ़ें →</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Stats Preview -->
+        <section class="py-20 px-6 bg-[#0F172A] text-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="grid md:grid-cols-3 gap-16">
+                    <div class="impact-stat">
+                        <div class="text-7xl font-extrabold">₹20</div>
+                        <p class="text-slate-400 mt-2">
+                            <span class="lang-en">Consultation Fee</span>
+                            <span class="lang-hi">परामर्श शुल्क</span>
+                        </p>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="text-7xl font-extrabold text-[#FF6B6B]">25k+</div>
+                        <p class="text-slate-400 mt-2">
+                            <span class="lang-en">Patients Served</span>
+                            <span class="lang-hi">रोगी सेवित</span>
+                        </p>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="text-7xl font-extrabold">100%</div>
+                        <p class="text-slate-400 mt-2">
+                            <span class="lang-en">Free Medicine</span>
+                            <span class="lang-hi">मुफ्त दवा</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT US PAGE -->
+    <div id="about" class="page-container page-hidden bg-white py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
+                <span class="lang-en">← Back to Home</span>
+                <span class="lang-hi">← होम पर वापस जाएं</span>
+            </button>
+            <h3 class="text-5xl font-extrabold mb-10 text-[#0F172A]">
+                <span class="lang-en">Bridging the Distance to Wellness</span>
+                <span class="lang-hi">स्वास्थ्य की दूरी को पाटना</span>
+            </h3>
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p class="lang-en">
+                    Sabka Clinic was born from a simple but powerful belief: healthcare is a fundamental human right, not a privilege reserved for those who can afford it. Located in the heart of a Mumbai slum community, we serve families who have been systematically excluded from quality healthcare.
+                </p>
+                <p class="lang-hi">
+                    सबका क्लिनिक एक सरल लेकिन शक्तिशाली विश्वास से पैदा हुआ था: स्वास्थ्य देखभाल एक मौलिक मानव अधिकार है, न कि उन लोगों के लिए आरक्षित विशेषाधिकार जो इसे वहन कर सकते हैं। मुंबई की एक झुग्गी समुदाय के केंद्र में स्थित, हम उन परिवारों की सेवा करते हैं जिन्हें गुणवत्तापूर्ण स्वास्थ्य सेवा से व्यवस्थित रूप से बाहर रखा गया है।
+                </p>
+
+                <p class="lang-en">
+                    Our clinic provides comprehensive medical consultations and treatment for just ₹20, with all medicines provided completely free of charge. But we're more than just a healthcare facility—we're a promise to our community that their health, dignity, and wellbeing matter.
+                </p>
+                <p class="lang-hi">
+                    हमारा क्लिनिक केवल ₹20 में व्यापक चिकित्सा परामर्श और उपचार प्रदान करता है, सभी दवाएं पूरी तरह से मुफ्त प्रदान की जाती हैं। लेकिन हम सिर्फ एक स्वास्थ्य सुविधा से अधिक हैं—हम अपने समुदाय से एक वादा हैं कि उनका स्वास्थ्य, गरिमा और कल्याण मायने रखता है।
+                </p>
+
+                <div class="bg-[#FFF5F5] p-8 rounded-2xl border-l-4 border-[#FF6B6B] my-8">
+                    <h4 class="font-bold text-xl mb-4 text-[#0F172A]">
+                        <span class="lang-en">Our Mission</span>
+                        <span class="lang-hi">हमारा मिशन</span>
+                    </h4>
+                    <p class="lang-en">
+                        To provide dignified, ethical, and compassionate primary healthcare to underserved urban communities, ensuring that every person—regardless of their economic status—has access to quality medical care.
+                    </p>
+                    <p class="lang-hi">
+                        गरिमापूर्ण, नैतिक और दयालु प्राथमिक स्वास्थ्य सेवा प्रदान करना, यह सुनिश्चित करते हुए कि हर व्यक्ति—उनकी आर्थिक स्थिति की परवाह किए बिना—गुणवत्तापूर्ण चिकित्सा देखभाल तक पहुंच हो।
+                    </p>
+                </div>
+
+                <p class="lang-en">
+                    We believe in preventive care, community education, and building lasting relationships with the families we serve. Through weekly hygiene workshops, maternal health programs, and chronic disease management, we're not just treating illness—we're building healthier futures.
+                </p>
+                <p class="lang-hi">
+                    हम निवारक देखभाल, सामुदायिक शिक्षा और उन परिवारों के साथ स्थायी संबंध बनाने में विश्वास करते हैं जिनकी हम सेवा करते हैं। साप्ताहिक स्वच्छता कार्यशालाओं, मातृ स्वास्थ्य कार्यक्रमों और पुरानी बीमारी प्रबंधन के माध्यम से, हम सिर्फ बीमारी का इलाज नहीं कर रहे हैं—हम स्वस्थ भविष्य बना रहे हैं।
+                </p>
+            </div>
+
+            <div class="mt-12 flex flex-col md:flex-row gap-4">
+                <button onclick="showPage('community')" class="btn-coral px-8 py-4 rounded font-bold uppercase tracking-widest text-sm">
+                    <span class="lang-en">Meet Our Community</span>
+                    <span class="lang-hi">हमारे समुदाय से मिलें</span>
+                </button>
+                <button onclick="showPage('volunteer')" class="border-2 border-[#0F172A] text-[#0F172A] px-8 py-4 rounded font-bold uppercase text-sm hover:bg-[#0F172A] hover:text-white transition">
+                    <span class="lang-en">Join Us</span>
+                    <span class="lang-hi">हमसे जुड़ें</span>
+                </button>
+            </div>
         </div>
-        <div class="impact-stat">
-          <div class="text-7xl font-extrabold">100%</div>
-          <p class="text-slate-400 mt-2">
-            <span class="lang-en">Free Medicine</span>
-            <span class="lang-hi">मुफ्त दवा</span>
-          </p>
+    </div>
+
+    <!-- COMMUNITY WE SERVE PAGE -->
+    <div id="community" class="page-container page-hidden py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
+                <span class="lang-en">← Back to Home</span>
+                <span class="lang-hi">← होम पर वापस जाएं</span>
+            </button>
+            <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
+                <span class="lang-en">The Community We Serve</span>
+                <span class="lang-hi">हम जिस समुदाय की सेवा करते हैं</span>
+            </h2>
+            <p class="text-xl text-slate-600 mb-16 max-w-3xl">
+                <span class="lang-en">Every patient has a story. Here are just a few that remind us why our work matters.</span>
+                <span class="lang-hi">हर मरीज की एक कहानी होती है। यहां कुछ ऐसी कहानियां हैं जो हमें याद दिलाती हैं कि हमारा काम क्यों मायने रखता है।</span>
+            </p>
+
+            <!-- Case Study 1: Haseena's Story -->
+            <div class="case-study-card mb-12 animate-slide-in">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="text-4xl">👶</div>
+                    <div>
+                        <div class="text-xs font-black text-[#FF6B6B] mb-2 uppercase tracking-widest">
+                            <span class="lang-en">Ethical Care Case Study</span>
+                            <span class="lang-hi">नैतिक देखभाल केस स्टडी</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-[#0F172A] mb-2">
+                            <span class="lang-en">Haseena's Story: Fighting Predatory Healthcare</span>
+                            <span class="lang-hi">हसीना की कहानी: शिकारी स्वास्थ्य सेवा से लड़ना</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="space-y-4 text-slate-700 leading-relaxed">
+                    <p class="lang-en">
+                        Haseena came to us desperate and scared. Her newborn baby had developed jaundice, a common but treatable condition in infants. However, an unlicensed "doctor" in the area had prescribed eye drops—a completely inappropriate and potentially harmful treatment—simply to make money off her family's desperation.
+                    </p>
+                    <p class="lang-hi">
+                        हसीना हमारे पास निराश और डरी हुई आई। उसके नवजात बच्चे को पीलिया हो गया था, शिशुओं में एक सामान्य लेकिन इलाज योग्य स्थिति। हालांकि, क्षेत्र में एक गैर-लाइसेंस प्राप्त "डॉक्टर" ने आंखों की बूंदें निर्धारित की थीं—एक पूरी तरह से अनुचित और संभावित रूप से हानिकारक उपचार—केवल उसके परिवार की निराशा से पैसे कमाने के लिए।
+                    </p>
+                    <p class="lang-en">
+                        Haseena is a mother of seven children. Her husband works as a rickshaw driver, earning barely enough to feed their family. When their baby fell ill, they had no choice but to seek help from whoever was available and affordable—even if that person wasn't properly qualified.
+                    </p>
+                    <p class="lang-hi">
+                        हसीना सात बच्चों की माँ है। उसका पति एक रिक्शा चालक के रूप में काम करता है, मुश्किल से अपने परिवार को खिलाने के लिए पर्याप्त कमाता है। जब उनका बच्चा बीमार पड़ा, तो उनके पास कोई विकल्प नहीं था कि वे जो भी उपलब्ध और किफायती हो उससे मदद लें—भले ही वह व्यक्ति ठीक से योग्य न हो।
+                    </p>
+                    <p class="lang-en">
+                        At Sabka Clinic, we immediately provided the correct treatment protocol for jaundice, including proper monitoring and phototherapy recommendations when needed. More importantly, we did it with dignity and without judgment. Today, Haseena's baby is healthy and thriving. This is why ethical, accessible healthcare matters—because predatory practices target the most vulnerable among us.
+                    </p>
+                    <p class="lang-hi">
+                        सबका क्लिनिक में, हमने तुरंत पीलिया के लिए सही उपचार प्रोटोकॉल प्रदान किया, जिसमें उचित निगरानी और जरूरत पड़ने पर फोटोथेरेपी की सिफारिशें शामिल थीं। इससे भी महत्वपूर्ण बात, हमने इसे गरिमा के साथ और बिना किसी निर्णय के किया। आज, हसीना का बच्चा स्वस्थ और फल-फूल रहा है। यही कारण है कि नैतिक, सुलभ स्वास्थ्य सेवा मायने रखती है—क्योंकि शिकारी प्रथाएं हमारे बीच सबसे कमजोर लोगों को निशाना बनाती हैं।
+                    </p>
+                </div>
+            </div>
+
+            <!-- Case Study 2: Umar Bhai -->
+            <div class="case-study-card mb-12 animate-slide-in">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="text-4xl">🤝</div>
+                    <div>
+                        <div class="text-xs font-black text-[#FF6B6B] mb-2 uppercase tracking-widest">
+                            <span class="lang-en">Community Leadership Case Study</span>
+                            <span class="lang-hi">सामुदायिक नेतृत्व केस स्टडी</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-[#0F172A] mb-2">
+                            <span class="lang-en">Umar Bhai: The Heart of Our Community</span>
+                            <span class="lang-hi">उमर भाई: हमारे समुदाय का दिल</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="space-y-4 text-slate-700 leading-relaxed">
+                    <p class="lang-en">
+                        Umar Bhai is not a doctor or a healthcare professional, but he is the backbone of Sabka Clinic. As a respected elder and leader in the community, he recognized years ago that his neighbors were suffering without access to proper medical care.
+                    </p>
+                    <p class="lang-hi">
+                        उमर भाई एक डॉक्टर या स्वास्थ्य सेवा पेशेवर नहीं हैं, लेकिन वे सबका क्लिनिक की रीढ़ हैं। समुदाय में एक सम्मानित बुजुर्ग और नेता के रूप में, उन्होंने वर्षों पहले पहचाना कि उनके पड़ोसी उचित चिकित्सा देखभाल तक पहुंच के बिना पीड़ित थे।
+                    </p>
+                    <p class="lang-en">
+                        Over the years, Umar Bhai has worked tirelessly—completely pro bono—to help establish and maintain the clinic. He secured the water connection that keeps the clinic running. He helped set up the children's center that protects young people from the dangers of the street and provides basic literacy education to families who couldn't otherwise afford it.
+                    </p>
+                    <p class="lang-hi">
+                        वर्षों से, उमर भाई ने अथक परिश्रम किया है—पूरी तरह से प्रो बोनो—क्लिनिक स्थापित करने और बनाए रखने में मदद करने के लिए। उन्होंने पानी का कनेक्शन सुरक्षित किया जो क्लिनिक को चलाता रहता है। उन्होंने बच्चों के केंद्र को स्थापित करने में मदद की जो युवाओं को सड़क के खतरों से बचाता है और उन परिवारों को बुनियादी साक्षरता शिक्षा प्रदान करता है जो अन्यथा इसे वहन नहीं कर सकते थे।
+                    </p>
+                    <p class="lang-en">
+                        Umar Bhai represents the best of what community can be—people helping people, neighbors caring for neighbors. His dedication reminds us that transformative change doesn't always come from the outside; sometimes it comes from within, from those who know their community best and love it most.
+                    </p>
+                    <p class="lang-hi">
+                        उमर भाई समुदाय के सर्वश्रेष्ठ का प्रतिनिधित्व करते हैं—लोग लोगों की मदद करते हैं, पड़ोसी पड़ोसियों की देखभाल करते हैं। उनका समर्पण हमें याद दिलाता है कि परिवर्तनकारी बदलाव हमेशा बाहर से नहीं आता; कभी-कभी यह भीतर से आता है, उन लोगों से जो अपने समुदाय को सबसे अच्छी तरह जानते हैं और इसे सबसे ज्यादा प्यार करते हैं।
+                    </p>
+                </div>
+            </div>
+
+            <!-- Case Study 3: Dr. Shilpa's Prevention Work -->
+            <div class="case-study-card animate-slide-in">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="text-4xl">🎓</div>
+                    <div>
+                        <div class="text-xs font-black text-[#FF6B6B] mb-2 uppercase tracking-widest">
+                            <span class="lang-en">Prevention & Wellness Case Study</span>
+                            <span class="lang-hi">रोकथाम और कल्याण केस स्टडी</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-[#0F172A] mb-2">
+                            <span class="lang-en">Dr. Shilpa: Teaching Health, Building Futures</span>
+                            <span class="lang-hi">डॉ. शिल्पा: स्वास्थ्य सिखाना, भविष्य बनाना</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="space-y-4 text-slate-700 leading-relaxed">
+                    <p class="lang-en">
+                        Healthcare isn't just about treating illness—it's about preventing it in the first place. Dr. Shilpa, our dedicated physician, understands this deeply. Every week, she visits the community center to teach hygiene and preventive health practices to residents of all ages.
+                    </p>
+                    <p class="lang-hi">
+                        स्वास्थ्य सेवा केवल बीमारी के इलाज के बारे में नहीं है—यह पहली जगह में इसे रोकने के बारे में है। डॉ. शिल्पा, हमारी समर्पित चिकित्सक, इसे गहराई से समझती हैं। हर हफ्ते, वह सभी उम्र के निवासियों को स्वच्छता और निवारक स्वास्थ्य प्रथाओं को सिखाने के लिए सामुदायिक केंद्र जाती हैं।
+                    </p>
+                    <p class="lang-en">
+                        These sessions cover essential topics: proper handwashing techniques, safe food preparation, recognizing early symptoms of common illnesses, maternal and child health, and managing chronic conditions like diabetes and hypertension. What might seem like simple knowledge can be life-saving information for families who have never had access to health education.
+                    </p>
+                    <p class="lang-hi">
+                        ये सत्र आवश्यक विषयों को कवर करते हैं: उचित हाथ धोने की तकनीकें, सुरक्षित भोजन तैयार करना, सामान्य बीमारियों के शुरुआती लक्षणों को पहचानना, मातृ और बाल स्वास्थ्य, और मधुमेह और उच्च रक्तचाप जैसी पुरानी स्थितियों का प्रबंधन। जो सरल ज्ञान लग सकता है वह उन परिवारों के लिए जीवन रक्षक जानकारी हो सकती है जिनकी स्वास्थ्य शिक्षा तक कभी पहुंच नहीं थी।
+                    </p>
+                    <p class="lang-en">
+                        Dr. Shilpa's preventive care workshops don't just reduce disease—they empower our community with knowledge. When parents understand how to keep their children healthy, when families know how to prevent common illnesses, the entire community becomes stronger and more resilient.
+                    </p>
+                    <p class="lang-hi">
+                        डॉ. शिल्पा की निवारक देखभाल कार्यशालाएं केवल बीमारी को कम नहीं करतीं—वे हमारे समुदाय को ज्ञान के साथ सशक्त बनाती हैं। जब माता-पिता समझते हैं कि अपने बच्चों को कैसे स्वस्थ रखें, जब परिवार जानते हैं कि आम बीमारियों को कैसे रोकें, तो पूरा समुदाय मजबूत और अधिक लचीला हो जाता है।
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-</div>
 
-<!-- ABOUT US PAGE -->
-<div id="about" class="page-container page-hidden bg-white py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
-      <span class="lang-en">← Back to Home</span>
-      <span class="lang-hi">← होम पर वापस जाएं</span>
-    </button>
-    <h3 class="text-5xl font-extrabold mb-10 text-[#0F172A]">
-      <span class="lang-en">Bridging the Distance to Wellness</span>
-      <span class="lang-hi">स्वास्थ्य की दूरी को पाटना</span>
-    </h3>
-    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-      <p class="lang-en">
-        Sabka Clinic was born from a simple but powerful belief: healthcare is a fundamental human right, not a privilege reserved for those who can afford it. Located in the heart of a Mumbai slum community, we serve families who have been systematically excluded from quality healthcare.
-      </p>
-      <p class="lang-hi">
-        सबका क्लिनिक एक सरल लेकिन शक्तिशाली विश्वास से पैदा हुआ था: स्वास्थ्य देखभाल एक मौलिक मानव अधिकार है, न कि उन लोगों के लिए आरक्षित विशेषाधिकार जो इसे वहन कर सकते हैं। मुंबई की एक झुग्गी समुदाय के केंद्र में स्थित, हम उन परिवारों की सेवा करते हैं जिन्हें गुणवत्तापूर्ण स्वास्थ्य सेवा से व्यवस्थित रूप से बाहर रखा गया है।
-      </p>
-      <p class="lang-en">
-        Our clinic provides comprehensive medical consultations and treatment for just ₹20, with all medicines provided completely free of charge. But we're more than just a healthcare facility—we're a promise to our community that their health, dignity, and wellbeing matter.
-      </p>
-      <p class="lang-hi">
-        हमारा क्लिनिक केवल ₹20 में व्यापक चिकित्सा परामर्श और उपचार प्रदान करता है, सभी दवाएं पूरी तरह से मुफ्त प्रदान की जाती हैं। लेकिन हम सिर्फ एक स्वास्थ्य सुविधा से अधिक हैं—हम अपने समुदाय से एक वादा हैं कि उनका स्वास्थ्य, गरिमा और कल्याण मायने रखता है।
-      </p>
-      <div class="bg-[#FFF5F5] p-8 rounded-2xl border-l-4 border-[#FF6B6B] my-8">
-        <h4 class="font-bold text-xl mb-4 text-[#0F172A]">
-          <span class="lang-en">Our Mission</span>
-          <span class="lang-hi">हमारा मिशन</span>
-        </h4>
-        <p class="lang-en">
-          To provide dignified, ethical, and compassionate primary healthcare to underserved urban communities, ensuring that every person—regardless of their economic status—has access to quality medical care.
-        </p>
-        <p class="lang-hi">
-          गरिमापूर्ण, नैतिक और दयालु प्राथमिक स्वास्थ्य सेवा प्रदान करना, यह सुनिश्चित करते हुए कि हर व्यक्ति—उनकी आर्थिक स्थिति की परवाह किए बिना—गुणवत्तापूर्ण चिकित्सा देखभाल तक पहुंच हो।
-        </p>
-      </div>
-      <p class="lang-en">
-        We believe in preventive care, community education, and building lasting relationships with the families we serve. Through weekly hygiene workshops, maternal health programs, and chronic disease management, we're not just treating illness—we're building healthier futures.
-      </p>
-      <p class="lang-hi">
-        हम निवारक देखभाल, सामुदायिक शिक्षा और उन परिवारों के साथ स्थायी संबंध बनाने में विश्वास करते हैं जिनकी हम सेवा करते हैं। साप्ताहिक स्वच्छता कार्यशालाओं, मातृ स्वास्थ्य कार्यक्रमों और पुरानी बीमारी प्रबंधन के माध्यम से, हम सिर्फ बीमारी का इलाज नहीं कर रहे हैं—हम स्वस्थ भविष्य बना रहे हैं।
-      </p>
-    </div>
-    <div class="mt-12 flex flex-col md:flex-row gap-4">
-      <button onclick="showPage('community')" class="btn-coral px-8 py-4 rounded font-bold uppercase tracking-widest text-sm">
-        <span class="lang-en">Meet Our Community</span>
-        <span class="lang-hi">हमारे समुदाय से मिलें</span>
-      </button>
-      <button onclick="showPage('volunteer')" class="border-2 border-[#0F172A] text-[#0F172A] px-8 py-4 rounded font-bold uppercase text-sm hover:bg-[#0F172A] hover:text-white transition">
-        <span class="lang-en">Join Us</span>
-        <span class="lang-hi">हमसे जुड़ें</span>
-      </button>
-    </div>
-  </div>
-</div>
+    <!-- PROGRAMS PAGE -->
+    <div id="programs" class="page-container page-hidden py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
+                <span class="lang-en">← Back to Home</span>
+                <span class="lang-hi">← होम पर वापस जाएं</span>
+            </button>
+            <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A] text-center">
+                <span class="lang-en">Our Programs</span>
+                <span class="lang-hi">हमारे कार्यक्रम</span>
+            </h2>
+            <p class="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
+                <span class="lang-en">Comprehensive healthcare services designed for the needs of our community.</span>
+                <span class="lang-hi">हमारे समुदाय की जरूरतों के लिए डिज़ाइन की गई व्यापक स्वास्थ्य सेवाएं।</span>
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-12 rounded-3xl shadow-sm border-t-8 border-[#0F172A] hover:shadow-xl transition">
+                    <div class="text-5xl mb-6">🩺</div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#0F172A]">
+                        <span class="lang-en">General Medicine</span>
+                        <span class="lang-hi">सामान्य चिकित्सा</span>
+                    </h3>
+                    <p class="text-slate-600">
+                        <span class="lang-en">Comprehensive primary care consultations, diagnosis, and treatment for common ailments and acute conditions.</span>
+                        <span class="lang-hi">सामान्य बीमारियों और तीव्र स्थितियों के लिए व्यापक प्राथमिक देखभाल परामर्श, निदान और उपचार।</span>
+                    </p>
+                </div>
+                <div class="bg-white p-12 rounded-3xl shadow-sm border-t-8 border-[#FF6B6B] hover:shadow-xl transition">
+                    <div class="text-5xl mb-6">💊</div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#0F172A]">
+                        <span class="lang-en">Chronic Care Management</span>
+                        <span class="lang-hi">पुरानी देखभाल प्रबंधन</span>
+                    </h3>
+                    <p class="text-slate-600">
+                        <span class="lang-en">Ongoing monitoring and management for conditions like diabetes, hypertension, and other chronic diseases.</span>
+                        <span class="lang-hi">मधुमेह, उच्च रक्तचाप और अन्य पुरानी बीमारियों जैसी स्थितियों के लिए निरंतर निगरानी और प्रबंधन।</span>
+                    </p>
+                </div>
+                <div class="bg-white p-12 rounded-3xl shadow-sm border-t-8 border-[#E11D48] hover:shadow-xl transition">
+                    <div class="text-5xl mb-6">🤰</div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#0F172A]">
+                        <span class="lang-en">Maternal & Child Health</span>
+                        <span class="lang-hi">मातृ और बाल स्वास्थ्य</span>
+                    </h3>
+                    <p class="text-slate-600">
+                        <span class="lang-en">Prenatal care, postnatal support, and pediatric services ensuring healthy mothers and children.</span>
+                        <span class="lang-hi">प्रसवपूर्व देखभाल, प्रसवोत्तर सहायता और बाल रोग सेवाएं स्वस्थ माताओं और बच्चों को सुनिश्चित करती हैं।</span>
+                    </p>
+                </div>
+            </div>
 
-<!-- COMMUNITY WE SERVE PAGE -->
-<div id="community" class="page-container page-hidden py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
-      <span class="lang-en">← Back to Home</span>
-      <span class="lang-hi">← होम पर वापस जाएं</span>
-    </button>
-    <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
-      <span class="lang-en">The Community We Serve</span>
-      <span class="lang-hi">हम जिस समुदाय की सेवा करते हैं</span>
-    </h2>
-    <p class="text-xl text-slate-600 mb-16 max-w-3xl">
-      <span class="lang-en">Every patient has a story. Here are just a few that remind us why our work matters.</span>
-      <span class="lang-hi">हर मरीज की एक कहानी होती है। यहां कुछ ऐसी कहानियां हैं जो हमें याद दिलाती हैं कि हमारा काम क्यों मायने रखता है।</span>
-    </p>
-
-    <!-- Case Study 1: Haseena's Story -->
-    <div class="case-study-card mb-12 animate-slide-in">
-      <div class="flex items-start gap-4 mb-4">
-        <div class="text-4xl">👶</div>
-        <div>
-          <div class="text-xs font-black text-[#FF6B6B] mb-2 uppercase tracking-widest">
-            <span class="lang-en">Ethical Care Case Study</span>
-            <span class="lang-hi">नैतिक देखभाल केस स्टडी</span>
-          </div>
-          <h3 class="text-3xl font-bold text-[#0F172A] mb-2">
-            <span class="lang-en">Haseena's Story: Fighting Predatory Healthcare</span>
-            <span class="lang-hi">हसीना की कहानी: शिकारी स्वास्थ्य सेवा से लड़ना</span>
-          </h3>
+            <div class="bg-[#FFF5F5] p-12 rounded-3xl border-l-8 border-[#FF6B6B]">
+                <h3 class="font-bold text-3xl mb-6 text-[#0F172A]">
+                    <span class="lang-en">What Makes Us Different</span>
+                    <span class="lang-hi">हमें क्या अलग बनाता है</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-[#E11D48]">
+                            <span class="lang-en">✓ All Medicines Free</span>
+                            <span class="lang-hi">✓ सभी दवाएं मुफ्त</span>
+                        </h4>
+                        <p class="text-slate-600">
+                            <span class="lang-en">Every prescription is filled at no cost to the patient.</span>
+                            <span class="lang-hi">हर नुस्खा रोगी के लिए बिना किसी लागत के भरा जाता है।</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-[#E11D48]">
+                            <span class="lang-en">✓ Only ₹20 Consultation</span>
+                            <span class="lang-hi">✓ केवल ₹20 परामर्श</span>
+                        </h4>
+                        <p class="text-slate-600">
+                            <span class="lang-en">Affordable care that maintains dignity and respect.</span>
+                            <span class="lang-hi">किफायती देखभाल जो गरिमा और सम्मान बनाए रखती है।</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-[#E11D48]">
+                            <span class="lang-en">✓ Weekly Health Education</span>
+                            <span class="lang-hi">✓ साप्ताहिक स्वास्थ्य शिक्षा</span>
+                        </h4>
+                        <p class="text-slate-600">
+                            <span class="lang-en">Dr. Shilpa teaches preventive care to the community.</span>
+                            <span class="lang-hi">डॉ. शिल्पा समुदाय को निवारक देखभाल सिखाती हैं।</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-[#E11D48]">
+                            <span class="lang-en">✓ Ethical, Qualified Care</span>
+                            <span class="lang-hi">✓ नैतिक, योग्य देखभाल</span>
+                        </h4>
+                        <p class="text-slate-600">
+                            <span class="lang-en">Licensed medical professionals providing evidence-based treatment.</span>
+                            <span class="lang-hi">लाइसेंस प्राप्त चिकित्सा पेशेवर साक्ष्य-आधारित उपचार प्रदान करते हैं।</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="space-y-4 text-slate-700 leading-relaxed">
-        <p class="lang-en">
-          Haseena came to us desperate and scared. Her newborn baby had developed jaundice, a common but treatable condition in infants. However, an unlicensed "doctor" in the area had prescribed eye drops—a completely inappropriate and potentially harmful treatment—simply to make money off her family's desperation.
-        </p>
-        <p class="lang-hi">
-          हसीना हमारे पास निराश और डरी हुई आई। उसके नवजात बच्चे को पीलिया हो गया था, शिशुओं में एक सामान्य लेकिन इलाज योग्य स्थिति। हालांकि, क्षेत्र में एक गैर-लाइसेंस प्राप्त "डॉक्टर" ने आंखों की बूंदें निर्धारित की थीं—एक पूरी तरह से अनुचित और संभावित रूप से हानिकारक उपचार—केवल उसके परिवार की निराशा से पैसे कमाने के लिए।
-        </p>
-        <p class="lang-en">
-          Haseena is a mother of seven children. Her husband works as a rickshaw driver, earning barely enough to feed their family. When their baby fell ill, they had no choice but to seek help from whoever was available and affordable—even if that person wasn't properly qualified.
-        </p>
-        <p class="lang-hi">
-          हसीना सात बच्चों की माँ है। उसका पति एक रिक्शा चालक के रूप में काम करता है, मुश्किल से अपने परिवार को खिलाने के लिए पर्याप्त कमाता है। जब उनका बच्चा बीमार पड़ा, तो उनके पास कोई विकल्प नहीं था कि वे जो भी उपलब्ध और किफायती हो उससे मदद लें—भले ही वह व्यक्ति ठीक से योग्य न हो।
-        </p>
-        <p class="lang-en">
-          At Sabka Clinic, we immediately provided the correct treatment protocol for jaundice, including proper monitoring and phototherapy recommendations when needed. More importantly, we did it with dignity and without judgment. Today, Haseena's baby is healthy and thriving. This is why ethical, accessible healthcare matters—because predatory practices target the most vulnerable among us.
-        </p>
-        <p class="lang-hi">
-          सबका क्लिनिक में, हमने तुरंत पीलिया के लिए सही उपचार प्रोटोकॉल प्रदान किया, जिसमें उचित निगरानी और जरूरत पड़ने पर फोटोथेरेपी की सिफारिशें शामिल थीं। इससे भी महत्वपूर्ण बात, हमने इसे गरिमा के साथ और बिना किसी निर्णय के किया। आज, हसीना का बच्चा स्वस्थ और फल-फूल रहा है। यही कारण है कि नैतिक, सुलभ स्वास्थ्य सेवा मायने रखती है—क्योंकि शिकारी प्रथाएं हमारे बीच सबसे कमजोर लोगों को निशाना बनाती हैं।
-        </p>
-      </div>
     </div>
 
-    <!-- Case Study 2: Umar Bhai -->
-    <div class="case-study-card mb-12 animate-slide-in">
-      <div class="flex items-start gap-4 mb-4">
-        <div class="text-4xl">🤝</div>
-        <div>
-          <div class="text-xs font-black text-[#FF6B6B] mb-2 uppercase tracking-widest">
-            <span class="lang-en">Community Leadership Case Study</span>
-            <span class="lang-hi">सामुदायिक नेतृत्व केस स्टडी</span>
-          </div>
-          <h3 class="text-3xl font-bold text-[#0F172A] mb-2">
-            <span class="lang-en">Umar Bhai: The Heart of Our Community</span>
-            <span class="lang-hi">उमर भाई: हमारे समुदाय का दिल</span>
-          </h3>
+    <!-- IMPACT PAGE -->
+    <div id="impact" class="page-container page-hidden bg-[#0F172A] text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
+                <span class="lang-en">← Back to Home</span>
+                <span class="lang-hi">← होम पर वापस जाएं</span>
+            </button>
+            <h2 class="text-5xl font-extrabold mb-6 text-center">
+                <span class="lang-en">Our Impact</span>
+                <span class="lang-hi">हमारा प्रभाव</span>
+            </h2>
+            <p class="text-xl text-slate-400 mb-16 text-center max-w-3xl mx-auto">
+                <span class="lang-en">Numbers tell part of the story. Behind each statistic is a person whose life has been touched.</span>
+                <span class="lang-hi">संख्याएं कहानी का एक हिस्सा बताती हैं। प्रत्येक आंकड़े के पीछे एक व्यक्ति है जिसका जीवन छुआ गया है।</span>
+            </p>
+            <div class="grid md:grid-cols-3 gap-16 py-20">
+                <div class="text-center">
+                    <div class="text-7xl font-extrabold">₹20</div>
+                    <p class="text-slate-400 text-lg mt-4">
+                        <span class="lang-en">Consultation Fee</span>
+                        <span class="lang-hi">परामर्श शुल्क</span>
+                    </p>
+                    <p class="text-sm text-slate-500 mt-2">
+                        <span class="lang-en">Making healthcare accessible to all</span>
+                        <span class="lang-hi">सभी के लिए स्वास्थ्य सेवा सुलभ बनाना</span>
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="text-7xl font-extrabold text-[#FF6B6B]">25,000+</div>
+                    <p class="text-slate-400 text-lg mt-4">
+                        <span class="lang-en">Patients Served</span>
+                        <span class="lang-hi">मरीजों की सेवा की</span>
+                    </p>
+                    <p class="text-sm text-slate-500 mt-2">
+                        <span class="lang-en">Lives touched with dignity</span>
+                        <span class="lang-hi">गरिमा के साथ जीवन को छुआ</span>
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="text-7xl font-extrabold">100%</div>
+                    <p class="text-slate-400 text-lg mt-4">
+                        <span class="lang-en">Free Medicine</span>
+                        <span class="lang-hi">मुफ्त दवा</span>
+                    </p>
+                    <p class="text-sm text-slate-500 mt-2">
+                        <span class="lang-en">All prescriptions filled at no cost</span>
+                        <span class="lang-hi">सभी नुस्खे बिना किसी लागत के भरे गए</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-12 mt-16">
+                <h3 class="text-3xl font-bold mb-6">
+                    <span class="lang-en">Beyond the Numbers</span>
+                    <span class="lang-hi">संख्याओं से परे</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-xl mb-3 text-[#FF6B6B]">
+                            <span class="lang-en">Health Education</span>
+                            <span class="lang-hi">स्वास्थ्य शिक्षा</span>
+                        </h4>
+                        <p class="text-slate-300">
+                            <span class="lang-en">Weekly hygiene and wellness workshops empowering families with preventive knowledge.</span>
+                            <span class="lang-hi">साप्ताहिक स्वच्छता और कल्याण कार्यशालाएं परिवारों को निवारक ज्ञान के साथ सशक्त बनाती हैं।</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-3 text-[#FF6B6B]">
+                            <span class="lang-en">Community Leadership</span>
+                            <span class="lang-hi">सामुदायिक नेतृत्व</span>
+                        </h4>
+                        <p class="text-slate-300">
+                            <span class="lang-en">Local champions like Umar Bhai drive change from within the community.</span>
+                            <span class="lang-hi">उमर भाई जैसे स्थानीय चैंपियन समुदाय के भीतर से बदलाव लाते हैं।</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-3 text-[#FF6B6B]">
+                            <span class="lang-en">Ethical Standards</span>
+                            <span class="lang-hi">नैतिक मानक</span>
+                        </h4>
+                        <p class="text-slate-300">
+                            <span class="lang-en">Protecting vulnerable families from predatory and unqualified healthcare providers.</span>
+                            <span class="lang-hi">कमजोर परिवारों को शिकारी और अयोग्य स्वास्थ्य सेवा प्रदाताओं से बचाना।</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-3 text-[#FF6B6B]">
+                            <span class="lang-en">Children's Center</span>
+                            <span class="lang-hi">बच्चों का केंद्र</span>
+                        </h4>
+                        <p class="text-slate-300">
+                            <span class="lang-en">Safe space for education and protection from street hazards.</span>
+                            <span class="lang-hi">शिक्षा और सड़क के खतरों से सुरक्षा के लिए सुरक्षित स्थान।</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="space-y-4 text-slate-700 leading-relaxed">
-        <p class="lang-en">
-          Umar Bhai is not a doctor or a healthcare professional, but he is the backbone of Sabka Clinic. As a respected elder and leader in the community, he recognized years ago that his neighbors were suffering without access to proper medical care.
-        </p>
-        <p class="lang-hi">
-          उमर भाई एक डॉक्टर या स्वास्थ्य सेवा पेशेवर नहीं हैं, लेकिन वे सबका क्लिनिक की रीढ़ हैं। समुदाय में एक सम्मानित बुजुर्ग और नेता के रूप में, उन्होंने वर्षों पहले पहचाना कि उनके पड़ोसी उचित चिकित्सा देखभाल तक पहुंच के बिना पीड़ित थे।
-        </p>
-        <p class="lang-en">
-          Over the years, Umar Bhai has worked tirelessly—completely pro bono—to help establish and maintain the clinic. He secured the water connection that keeps the clinic running. He helped set up the children's center that protects young people from the dangers of the street and provides basic literacy education to families who couldn't otherwise afford it.
-        </p>
-        <p class="lang-hi">
-          वर्षों से, उमर भाई ने अथक परिश्रम किया है—पूरी तरह से प्रो बोनो—क्लिनिक स्थापित करने और बनाए रखने में मदद करने के लिए। उन्होंने पानी का कनेक्शन सुरक्षित किया जो क्लिनिक को चलाता रहता है। उन्होंने बच्चों के केंद्र को स्थापित करने में मदद की जो युवाओं को सड़क के खतरों से बचाता है और उन परिवारों को बुनियादी साक्षरता शिक्षा प्रदान करता है जो अन्यथा इसे वहन नहीं कर सकते थे।
-        </p>
-        <p class="lang-en">
-          Umar Bhai represents the best of what community can be—people helping people, neighbors caring for neighbors. His dedication reminds us that transformative change doesn't always come from the outside; sometimes it comes from within, from those who know their community best and love it most.
-        </p>
-        <p class="lang-hi">
-          उमर भाई समुदाय के सर्वश्रेष्ठ का प्रतिनिधित्व करते हैं—लोग लोगों की मदद करते हैं, पड़ोसी पड़ोसियों की देखभाल करते हैं। उनका समर्पण हमें याद दिलाता है कि परिवर्तनकारी बदलाव हमेशा बाहर से नहीं आता; कभी-कभी यह भीतर से आता है, उन लोगों से जो अपने समुदाय को सबसे अच्छी तरह जानते हैं और इसे सबसे ज्यादा प्यार करते हैं।
-        </p>
-      </div>
     </div>
 
-    <!-- Case Study 3: Dr. Shilpa's Prevention Work -->
-    <div class="case-study-card animate-slide-in">
-      <div class="flex items-start gap-4 mb-4">
-        <div class="text-4xl">🎓</div>
-        <div>
-          <div class="text-xs font-black text-[#FF6B6B] mb-2 uppercase tracking-widest">
-            <span class="lang-en">Prevention & Wellness Case Study</span>
-            <span class="lang-hi">रोकथाम और कल्याण केस स्टडी</span>
-          </div>
-          <h3 class="text-3xl font-bold text-[#0F172A] mb-2">
-            <span class="lang-en">Dr. Shilpa: Teaching Health, Building Futures</span>
-            <span class="lang-hi">डॉ. शिल्पा: स्वास्थ्य सिखाना, भविष्य बनाना</span>
-          </h3>
+    <!-- VOLUNTEER PAGE -->
+    <div id="volunteer" class="page-container page-hidden py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
+                <span class="lang-en">← Back to Home</span>
+                <span class="lang-hi">← होम पर वापस जाएं</span>
+            </button>
+            <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
+                <span class="lang-en">Volunteer With Us</span>
+                <span class="lang-hi">हमारे साथ स्वयंसेवक बनें</span>
+            </h2>
+            <p class="text-xl text-slate-600 mb-12">
+                <span class="lang-en">Your skills and compassion can transform lives. Join our mission to bring healthcare to those who need it most.</span>
+                <span class="lang-hi">आपके कौशल और करुणा जीवन को बदल सकते हैं। उन लोगों को स्वास्थ्य सेवा लाने के हमारे मिशन में शामिल हों जिन्हें इसकी सबसे अधिक आवश्यकता है।</span>
+            </p>
+
+            <div class="bg-white p-10 rounded-3xl shadow-lg mb-10 border-l-8 border-[#FF6B6B]">
+                <h3 class="text-2xl font-bold mb-6 text-[#0F172A]">
+                    <span class="lang-en">Medical Professionals</span>
+                    <span class="lang-hi">चिकित्सा पेशेवर</span>
+                </h3>
+                <p class="text-slate-600 mb-6">
+                    <span class="lang-en">We're actively seeking volunteer doctors and healthcare professionals to provide consultations, conduct health education sessions, and support our preventive care programs.</span>
+                    <span class="lang-hi">हम सक्रिय रूप से स्वयंसेवक डॉक्टरों और स्वास्थ्य सेवा पेशेवरों की तलाश कर रहे हैं जो परामर्श प्रदान करें, स्वास्थ्य शिक्षा सत्र आयोजित करें और हमारे निवारक देखभाल कार्यक्रमों का समर्थन करें।</span>
+                </p>
+                <div class="bg-[#FFF5F5] p-6 rounded-xl mb-6">
+                    <h4 class="font-bold mb-3 text-[#E11D48]">
+                        <span class="lang-en">How You Can Help:</span>
+                        <span class="lang-hi">आप कैसे मदद कर सकते हैं:</span>
+                    </h4>
+                    <ul class="space-y-2 text-slate-700">
+                        <li class="lang-en">• Conduct weekly hygiene and preventive care sessions at the community center</li>
+                        <li class="lang-hi">• सामुदायिक केंद्र में साप्ताहिक स्वच्छता और निवारक देखभाल सत्र आयोजित करें</li>
+                        <li class="lang-en">• Provide medical consultations on a rotating volunteer schedule</li>
+                        <li class="lang-hi">• घूर्णन स्वयंसेवक कार्यक्रम पर चिकित्सा परामर्श प्रदान करें</li>
+                        <li class="lang-en">• Train community health workers</li>
+                        <li class="lang-hi">• सामुदायिक स्वास्थ्य कार्यकर्ताओं को प्रशिक्षित करें</li>
+                        <li class="lang-en">• Develop health education materials in Hindi and local languages</li>
+                        <li class="lang-hi">• हिंदी और स्थानीय भाषाओं में स्वास्थ्य शिक्षा सामग्री विकसित करें</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-10 rounded-3xl shadow-lg mb-10 border-l-8 border-[#0F172A]">
+                <h3 class="text-2xl font-bold mb-6 text-[#0F172A]">
+                    <span class="lang-en">Non-Medical Volunteers</span>
+                    <span class="lang-hi">गैर-चिकित्सा स्वयंसेवक</span>
+                </h3>
+                <p class="text-slate-600 mb-6">
+                    <span class="lang-en">You don't need to be a doctor to make a difference. We need passionate individuals to help with operations, outreach, education, and community support.</span>
+                    <span class="lang-hi">फर्क लाने के लिए आपको डॉक्टर होने की जरूरत नहीं है। हमें संचालन, आउटरीच, शिक्षा और सामुदायिक सहायता में मदद करने के लिए भावुक व्यक्तियों की आवश्यकता है।</span>
+                </p>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h4 class="font-bold mb-3 text-[#0F172A]">
+                        <span class="lang-en">Opportunities Include:</span>
+                        <span class="lang-hi">अवसरों में शामिल हैं:</span>
+                    </h4>
+                    <ul class="space-y-2 text-slate-700">
+                        <li class="lang-en">• Administrative support and patient registration</li>
+                        <li class="lang-hi">• प्रशासनिक सहायता और रोगी पंजीकरण</li>
+                        <li class="lang-en">• Community outreach and health awareness campaigns</li>
+                        <li class="lang-hi">• सामुदायिक आउटरीच और स्वास्थ्य जागरूकता अभियान</li>
+                        <li class="lang-en">• Teaching basic literacy at the children's center</li>
+                        <li class="lang-hi">• बच्चों के केंद्र में बुनियादी साक्षरता पढ़ाना</li>
+                        <li class="lang-en">• Fundraising and donor relations</li>
+                        <li class="lang-hi">• धन उगाही और दाता संबंध</li>
+                        <li class="lang-en">• Translation and interpretation services</li>
+                        <li class="lang-hi">• अनुवाद और व्याख्या सेवाएं</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-[#0F172A] text-white p-10 rounded-3xl text-center">
+                <h3 class="text-3xl font-bold mb-4">
+                    <span class="lang-en">Ready to Make a Difference?</span>
+                    <span class="lang-hi">फर्क लाने के लिए तैयार हैं?</span>
+                </h3>
+                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+                    <span class="lang-en">Contact us to learn more about volunteer opportunities. Whether you can give a few hours a week or organize a one-time health camp, every contribution matters.</span>
+                    <span class="lang-hi">स्वयंसेवक अवसरों के बारे में अधिक जानने के लिए हमसे संपर्क करें। चाहे आप सप्ताह में कुछ घंटे दे सकें या एकमुश्त स्वास्थ्य शिविर आयोजित कर सकें, हर योगदान मायने रखता है।</span>
+                </p>
+                <div class="text-2xl font-mono text-[#FF6B6B] bg-white/10 py-4 px-8 rounded-xl inline-block">
+                    volunteer@sabkaclinic.org
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="space-y-4 text-slate-700 leading-relaxed">
-        <p class="lang-en">
-          Healthcare isn't just about treating illness—it's about preventing it in the first place. Dr. Shilpa, our dedicated physician, understands this deeply. Every week, she visits the community center to teach hygiene and preventive health practices to residents of all ages.
-        </p>
-        <p class="lang-hi">
-          स्वास्थ्य सेवा केवल बीमारी के इलाज के बारे में नहीं है—यह पहली जगह में इसे रोकने के बारे में है। डॉ. शिल्पा, हमारी समर्पित चिकित्सक, इसे गहराई से समझती हैं। हर हफ्ते, वह सभी उम्र के निवासियों को स्वच्छता और निवारक स्वास्थ्य प्रथाओं को सिखाने के लिए सामुदायिक केंद्र जाती हैं।
-        </p>
-        <p class="lang-en">
-          These sessions cover essential topics: proper handwashing techniques, safe food preparation, recognizing early symptoms of common illnesses, maternal and child health, and managing chronic conditions like diabetes and hypertension. What might seem like simple knowledge can be life-saving information for families who have never had access to health education.
-        </p>
-        <p class="lang-hi">
-          ये सत्र आवश्यक विषयों को कवर करते हैं: उचित हाथ धोने की तकनीकें, सुरक्षित भोजन तैयार करना, सामान्य बीमारियों के शुरुआती लक्षणों को पहचानना, मातृ और बाल स्वास्थ्य, और मधुमेह और उच्च रक्तचाप जैसी पुरानी स्थितियों का प्रबंधन। जो सरल ज्ञान लग सकता है वह उन परिवारों के लिए जीवन रक्षक जानकारी हो सकती है जिनकी स्वास्थ्य शिक्षा तक कभी पहुंच नहीं थी।
-        </p>
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- PROGRAMS PAGE (Placeholder) -->
-<div id="programs" class="page-container page-hidden bg-white py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
-      <span class="lang-en">← Back to Home</span>
-      <span class="lang-hi">← होम पर वापस जाएं</span>
-    </button>
-    <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
-      <span class="lang-en">Our Programs</span>
-      <span class="lang-hi">हमारे कार्यक्रम</span>
-    </h2>
-    <p class="text-xl text-slate-600">
-      <span class="lang-en">Content coming soon...</span>
-      <span class="lang-hi">सामग्री जल्द आ रही है...</span>
-    </p>
-  </div>
-</div>
+    <!-- DONATE PAGE -->
+    <div id="donate" class="page-container page-hidden py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
+                <span class="lang-en">← Back to Home</span>
+                <span class="lang-hi">← होम पर वापस जाएं</span>
+            </button>
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
+                    <span class="lang-en">Support Our Mission</span>
+                    <span class="lang-hi">हमारे मिशन का समर्थन करें</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    <span class="lang-en">Your donation directly funds medicine, medical supplies, and the salaries of our healthcare workers. Every rupee makes a difference.</span>
+                    <span class="lang-hi">आपका दान सीधे दवा, चिकित्सा आपूर्ति और हमारे स्वास्थ्य सेवा कार्यकर्ताओं के वेतन को वित्त पोषित करता है। हर रुपया फर्क लाता है।</span>
+                </p>
+            </div>
 
-<!-- IMPACT PAGE (Placeholder) -->
-<div id="impact" class="page-container page-hidden bg-white py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
-      <span class="lang-en">← Back to Home</span>
-      <span class="lang-hi">← होम पर वापस जाएं</span>
-    </button>
-    <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
-      <span class="lang-en">Our Impact</span>
-      <span class="lang-hi">हमारा प्रभाव</span>
-    </h2>
-    <p class="text-xl text-slate-600">
-      <span class="lang-en">Content coming soon...</span>
-      <span class="lang-hi">सामग्री जल्द आ रही है...</span>
-    </p>
-  </div>
-</div>
+            <div class="bg-white p-12 rounded-3xl shadow-2xl border-t-8 border-[#FF6B6B] mb-10">
+                <h3 class="text-3xl font-bold mb-8 text-[#0F172A] text-center">
+                    <span class="lang-en">Your Impact</span>
+                    <span class="lang-hi">आपका प्रभाव</span>
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-10">
+                    <div class="text-center p-6 bg-[#FFF5F5] rounded-2xl">
+                        <div class="text-4xl font-extrabold text-[#FF6B6B] mb-2">₹500</div>
+                        <p class="text-sm text-slate-600">
+                            <span class="lang-en">Provides medicine for 5 patients</span>
+                            <span class="lang-hi">5 रोगियों के लिए दवा प्रदान करता है</span>
+                        </p>
+                    </div>
+                    <div class="text-center p-6 bg-[#FFF5F5] rounded-2xl">
+                        <div class="text-4xl font-extrabold text-[#FF6B6B] mb-2">₹2,000</div>
+                        <p class="text-sm text-slate-600">
+                            <span class="lang-en">Funds a health education session</span>
+                            <span class="lang-hi">एक स्वास्थ्य शिक्षा सत्र को वित्त पोषित करता है</span>
+                        </p>
+                    </div>
+                    <div class="text-center p-6 bg-[#FFF5F5] rounded-2xl">
+                        <div class="text-4xl font-extrabold text-[#FF6B6B] mb-2">₹10,000</div>
+                        <p class="text-sm text-slate-600">
+                            <span class="lang-en">Supports a week of clinic operations</span>
+                            <span class="lang-hi">एक सप्ताह के क्लिनिक संचालन का समर्थन करता है</span>
+                        </p>
+                    </div>
+                </div>
 
-<!-- VOLUNTEER PAGE (Placeholder) -->
-<div id="volunteer" class="page-container page-hidden bg-white py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
-      <span class="lang-en">← Back to Home</span>
-      <span class="lang-hi">← होम पर वापस जाएं</span>
-    </button>
-    <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
-      <span class="lang-en">Volunteer With Us</span>
-      <span class="lang-hi">हमारे साथ स्वयंसेवक बनें</span>
-    </h2>
-    <p class="text-xl text-slate-600">
-      <span class="lang-en">Content coming soon...</span>
-      <span class="lang-hi">सामग्री जल्द आ रही है...</span>
-    </p>
-  </div>
-</div>
+                <div class="bg-[#0F172A] p-8 rounded-2xl text-center">
+                    <h4 class="text-white font-bold text-2xl mb-4">
+                        <span class="lang-en">Donate Now</span>
+                        <span class="lang-hi">अभी दान करें</span>
+                    </h4>
+                    <div class="text-3xl font-mono text-[#FF6B6B] bg-white/10 py-6 px-8 rounded-xl inline-block mb-4">
+                        upi@sabkaclinic
+                    </div>
+                    <p class="text-slate-300 text-sm">
+                        <span class="lang-en">Scan or use this UPI ID for secure donations</span>
+                        <span class="lang-hi">सुरक्षित दान के लिए इस UPI ID को स्कैन करें या उपयोग करें</span>
+                    </p>
+                </div>
+            </div>
 
-<!-- DONATE PAGE (Placeholder) -->
-<div id="donate" class="page-container page-hidden bg-white py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <button onclick="showPage('home')" class="mb-8 text-xs font-bold text-[#FF6B6B] uppercase tracking-widest">
-      <span class="lang-en">← Back to Home</span>
-      <span class="lang-hi">← होम पर वापस जाएं</span>
-    </button>
-    <h2 class="text-5xl font-extrabold mb-6 text-[#0F172A]">
-      <span class="lang-en">Support Our Mission</span>
-      <span class="lang-hi">हमारे मिशन का समर्थन करें</span>
-    </h2>
-    <p class="text-xl text-slate-600 mb-8">
-      <span class="lang-en">Your donation helps us provide quality healthcare to those who need it most.</span>
-      <span class="lang-hi">आपका दान हमें उन लोगों को गुणवत्तापूर्ण स्वास्थ्य सेवा प्रदान करने में मदद करता है जिन्हें इसकी सबसे अधिक आवश्यकता है।</span>
-    </p>
-    <p class="text-lg text-slate-600">
-      <span class="lang-en">Donation functionality coming soon...</span>
-      <span class="lang-hi">दान कार्यक्षमता जल्द आ रही है...</span>
-    </p>
-  </div>
-</div>
+            <div class="bg-slate-50 p-10 rounded-3xl">
+                <h3 class="text-2xl font-bold mb-6 text-[#0F172A]">
+                    <span class="lang-en">Why Donate to Sabka Clinic?</span>
+                    <span class="lang-hi">सबका क्लिनिक को दान क्यों करें?</span>
+                </h3>
+                <div class="space-y-4 text-slate-700">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✓</span>
+                        <div>
+                            <h4 class="font-bold mb-1">
+                                <span class="lang-en">100% Transparency</span>
+                                <span class="lang-hi">100% पारदर्शिता</span>
+                            </h4>
+                            <p class="lang-en">Every rupee is accounted for and goes directly to patient care and operations.</p>
+                            <p class="lang-hi">प्रत्येक रुपये का हिसाब है और सीधे रोगी देखभाल और संचालन में जाता है।</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✓</span>
+                        <div>
+                            <h4 class="font-bold mb-1">
+                                <span class="lang-en">Direct Impact</span>
+                                <span class="lang-hi">सीधा प्रभाव</span>
+                            </h4>
+                            <p class="lang-en">Your donation immediately provides medicine and care to families in need.</p>
+                            <p class="lang-hi">आपका दान तुरंत जरूरतमंद परिवारों को दवा और देखभाल प्रदान करता है।</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✓</span>
+                        <div>
+                            <h4 class="font-bold mb-1">
+                                <span class="lang-en">Community-Centered</span>
+                                <span class="lang-hi">समुदाय-केंद्रित</span>
+                            </h4>
+                            <p class="lang-en">We work with and within the community, ensuring sustainable impact.</p>
+                            <p class="lang-hi">हम समुदाय के साथ और उसके भीतर काम करते हैं, स्थायी प्रभाव सुनिश्चित करते हुए।</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✓</span>
+                        <div>
+                            <h4 class="font-bold mb-1">
+                                <span class="lang-en">Ethical Healthcare</span>
+                                <span class="lang-hi">नैतिक स्वास्थ्य सेवा</span>
+                            </h4>
+                            <p class="lang-en">Licensed professionals providing evidence-based, dignified care.</p>
+                            <p class="lang-hi">लाइसेंस प्राप्त पेशेवर साक्ष्य-आधारित, गरिमापूर्ण देखभाल प्रदान करते हैं।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<script>
-function showPage(pageId) {
-  // Hide all pages
-  const pages = document.querySelectorAll('.page-container');
-  pages.forEach(page => page.classList.add('page-hidden'));
-  
-  // Show selected page
-  const selectedPage = document.getElementById(pageId);
-  if (selectedPage) {
-    selectedPage.classList.remove('page-hidden');
-    window.scrollTo(0, 0);
-  }
-}
+            <div class="mt-10 text-center">
+                <p class="text-slate-600 mb-6">
+                    <span class="lang-en">Have questions about donating or want to discuss larger contributions?</span>
+                    <span class="lang-hi">दान के बारे में प्रश्न हैं या बड़े योगदान पर चर्चा करना चाहते हैं?</span>
+                </p>
+                <div class="text-xl font-mono text-[#E11D48]">
+                    donate@sabkaclinic.org
+                </div>
+            </div>
+        </div>
+    </div>
 
-function toggleLang() {
-  const body = document.body;
-  const btn = document.getElementById('langBtn');
-  
-  if (body.classList.contains('lang-hindi')) {
-    body.classList.remove('lang-hindi');
-    btn.textContent = 'HINDI';
-  } else {
-    body.classList.add('lang-hindi');
-    btn.textContent = 'ENGLISH';
-  }
-}
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="font-extrabold text-2xl mb-4 uppercase">
+                        SABKA<span class="text-[#FF6B6B]">CLINIC</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm">
+                        <span class="lang-en">Healthcare for all, regardless of economic status.</span>
+                        <span class="lang-hi">आर्थिक स्थिति की परवाह किए बिना सभी के लिए स्वास्थ्य सेवा।</span>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider text-sm">
+                        <span class="lang-en">Quick Links</span>
+                        <span class="lang-hi">त्वरित लिंक</span>
+                    </h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a onclick="showPage('about')" class="hover:text-[#FF6B6B] cursor-pointer">
+                            <span class="lang-en">About Us</span>
+                            <span class="lang-hi">हमारे बारे में</span>
+                        </a></li>
+                        <li><a onclick="showPage('community')" class="hover:text-[#FF6B6B] cursor-pointer">
+                            <span class="lang-en">Community</span>
+                            <span class="lang-hi">समुदाय</span>
+                        </a></li>
+                        <li><a onclick="showPage('programs')" class="hover:text-[#FF6B6B] cursor-pointer">
+                            <span class="lang-en">Programs</span>
+                            <span class="lang-hi">कार्यक्रम</span>
+                        </a></li>
+                        <li><a onclick="showPage('impact')" class="hover:text-[#FF6B6B] cursor-pointer">
+                            <span class="lang-en">Impact</span>
+                            <span class="lang-hi">प्रभाव</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider text-sm">
+                        <span class="lang-en">Get Involved</span>
+                        <span class="lang-hi">शामिल हों</span>
+                    </h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a onclick="showPage('volunteer')" class="hover:text-[#FF6B6B] cursor-pointer">
+                            <span class="lang-en">Volunteer</span>
+                            <span class="lang-hi">स्वयंसेवक</span>
+                        </a></li>
+                        <li><a onclick="showPage('donate')" class="hover:text-[#FF6B6B] cursor-pointer">
+                            <span class="lang-en">Donate</span>
+                            <span class="lang-hi">दान करें</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider text-sm">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-hi">संपर्क</span>
+                    </h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>info@sabkaclinic.org</li>
+                        <li>
+                            <span class="lang-en">Mumbai, India</span>
+                            <span class="lang-hi">मुंबई, भारत</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-slate-500 text-sm">
+                <p>© 2025 Sabka Clinic. <span class="lang-en">All rights reserved.</span><span class="lang-hi">सर्वाधिकार सुरक्षित।</span></p>
+            </div>
+        </div>
+    </footer>
 
-// Initialize - show home page on load
-document.addEventListener('DOMContentLoaded', function() {
-  showPage('home');
-});
-</script>
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-container').forEach(p => p.classList.add('page-hidden'));
+            const target = document.getElementById(pageId);
+            if (target) target.classList.remove('page-hidden');
+            window.scrollTo(0, 0);
+        }
 
+        let isHindi = false;
+        function toggleLang() {
+            isHindi = !isHindi;
+            if (isHindi) {
+                document.body.classList.add('lang-hindi');
+                document.getElementById('langBtn').innerText = "ENGLISH";
+            } else {
+                document.body.classList.remove('lang-hindi');
+                document.getElementById('langBtn').innerText = "HINDI";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => showPage('home'));
+    </script>
 </body>
 </html>
