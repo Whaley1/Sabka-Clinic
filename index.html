@@ -72,6 +72,41 @@
             border-color: #FF6B6B;
             transform: translateY(-4px);
         }
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .photo-card {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .photo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .photo-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
         @keyframes fadeIn { 
             from { opacity: 0; transform: translateY(5px); } 
             to { opacity: 1; transform: translateY(0); } 
@@ -155,6 +190,12 @@
                 <span class="lang-en">Dignified and ethical primary healthcare for India's urban settlements for just ₹20.</span>
                 <span class="lang-hi">भारत की शहरी बस्तियों के लिए केवल ₹20 में गरिमापूर्ण प्राथमिक स्वास्थ्य सेवा।</span>
             </p>
+
+            <!-- Hero Image -->
+            <div class="hero-image-container">
+                <img src="https://marjoriebecker.shootproof.com/gallery/25568644/photo/3537780407/f3425b/share" alt="The Sabka Clinic Community">
+            </div>
+
             <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
                 <button onclick="showPage('donate')" class="btn-coral px-10 py-4 rounded font-bold uppercase tracking-widest text-sm">
                     <span class="lang-en">Donate Now</span>
@@ -292,6 +333,17 @@
                 <span class="lang-en">Bridging the Distance to Wellness</span>
                 <span class="lang-hi">स्वास्थ्य की दूरी को पाटना</span>
             </h3>
+
+            <!-- Photo Grid -->
+            <div class="photo-grid mb-12">
+                <div class="photo-card">
+                    <img src="https://marjoriebecker.shootproof.com/gallery/25568644/photo/3537777623/fff137/share" alt="Sabka Clinic Entrance">
+                </div>
+                <div class="photo-card">
+                    <img src="https://marjoriebecker.shootproof.com/gallery/25568644/photo/3537779718/a7b83c/share" alt="The Surrounding Community">
+                </div>
+            </div>
+
             <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p class="lang-en">
                     Sabka Clinic was born from a simple but powerful belief: healthcare is a fundamental human right, not a privilege reserved for those who can afford it. Located in the heart of a Mumbai slum community, we serve families who have been systematically excluded from quality healthcare.
@@ -352,10 +404,15 @@
                 <span class="lang-en">The Community We Serve</span>
                 <span class="lang-hi">हम जिस समुदाय की सेवा करते हैं</span>
             </h2>
-            <p class="text-xl text-slate-600 mb-16 max-w-3xl">
+            <p class="text-xl text-slate-600 mb-8 max-w-3xl">
                 <span class="lang-en">Every patient has a story. Here are just a few that remind us why our work matters.</span>
                 <span class="lang-hi">हर मरीज की एक कहानी होती है। यहां कुछ ऐसी कहानियां हैं जो हमें याद दिलाती हैं कि हमारा काम क्यों मायने रखता है।</span>
             </p>
+
+            <!-- Community Photo -->
+            <div class="hero-image-container mb-16">
+                <img src="https://marjoriebecker.shootproof.com/gallery/25568644/photo/3537780407/f3425b/share" alt="Our Community">
+            </div>
 
             <!-- Case Study 1: Haseena's Story -->
             <div class="case-study-card mb-12 animate-slide-in">
@@ -467,6 +524,13 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Clinic Interior Photo -->
+            <div class="mt-16">
+                <div class="photo-card">
+                    <img src="https://marjoriebecker.shootproof.com/gallery/25568644/photo/3537778128/6bea78/share" alt="Inside Sabka Clinic">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -481,10 +545,16 @@
                 <span class="lang-en">Our Programs</span>
                 <span class="lang-hi">हमारे कार्यक्रम</span>
             </h2>
-            <p class="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
+            <p class="text-xl text-slate-600 mb-12 text-center max-w-3xl mx-auto">
                 <span class="lang-en">Comprehensive healthcare services designed for the needs of our community.</span>
                 <span class="lang-hi">हमारे समुदाय की जरूरतों के लिए डिज़ाइन की गई व्यापक स्वास्थ्य सेवाएं।</span>
             </p>
+
+            <!-- Clinic Photo -->
+            <div class="hero-image-container mb-16">
+                <img src="https://marjoriebecker.shootproof.com/gallery/25568644/photo/3537778128/6bea78/share" alt="Inside the Clinic">
+            </div>
+
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <div class="bg-white p-12 rounded-3xl shadow-sm border-t-8 border-[#0F172A] hover:shadow-xl transition">
                     <div class="text-5xl mb-6">🩺</div>
